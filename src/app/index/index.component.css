@@ -9,3 +9,9 @@
 	color: green;
 	font-weight: bold;
 }
+
+select#search-button{
+	background-color: transparent;
+    border: 1px solid #ced4da;
+    outline: none;
+}
