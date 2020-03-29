@@ -1,1 +1,67 @@
-<p>register works!</p>
+<app-navbar></app-navbar>
+<main role="main" class="container">
+    <h2>{{ pageTitle}}</h2>
+    <hr>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="form-group col-md-4 col-sm-12">
+                <label for="name">Name</label>
+                <input type="text" name="email" class="form-control" [(ngModel)]="name">
+                <small class="red">{{nameMessage}}</small>
+            </div>
+
+            <div class="form-group col-md-4 col-sm-12">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control" [(ngModel)]="email" placeholder="mail@mail.com">
+                <small class="red">{{emailMessage}}</small>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+
+            <div class="form-group col-md-4 col-sm-12">
+                <label for="phonenumber">Phone Number</label>
+                <input type="number" name="email" class="form-control" [(ngModel)]="phoneNumber" min="0" placeholder="0712169695">
+                <small class="red">{{phoneNumberMessage}}</small>
+            </div>
+
+            <div class="form-group col-md-4 col-sm-12">
+                <label for="physicalAddress">Physical Address</label>
+                <input type="email" name="email" class="form-control" [(ngModel)]="physicalAddress">
+                <small class="red">{{addressMessage}}</small>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-md-4 col-sm-12">
+                <label for="Password">Password</label>
+                <input type="password" name="password" class="form-control" [(ngModel)]="password">
+                <small class="red">{{passwordMessage}}</small>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="form-group col-md-6 col-sm-12">
+                <button class="btn btn-info" type="button" (click)="registerHuman()">Submit</button>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <p>Or</p>
+                <button class="btn btn-outline-primary facebook">Sign up with Facebook</button>
+                <button class="btn btn-outline-success">Sign up with Gmail</button>
+            </div>
+
+        </div>
+    </div>
+
+</main>

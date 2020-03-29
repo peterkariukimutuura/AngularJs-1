@@ -13,3 +13,11 @@ footer.footer{
 body{
     font-family: 'Comic Neue', cursive;
 }
+
+.red{
+    color: red;
+}
+button.facebook{
+    margin-right: 2em;
+    margin-bottom: 1em;
+}
