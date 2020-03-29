@@ -9,6 +9,26 @@ import { IProduct } from './shared/iproduct';
 })
 export class AppComponent {
   title = 'Product list';
+  filteredProducts: IProduct[];
+
+
+  _listFilter: string;
+
+  get listFilter(): string {
+    return this._listFilter;
+  }
+
+  constructor(){
+    this.filteredProducts = this.products;
+    this.listFilter ='a';
+  }
+
+  set listFilter(value: string) {
+    this._listFilter = value;
+    this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
+  }
+
+
   products: IProduct[] =
     [
       {
@@ -62,6 +82,16 @@ export class AppComponent {
         "imageUrl": "assets/images/xbox-controller.png"
       }
     ];
+
+
+
+    performFilter(filterBy:string) : IProduct[]{
+      filterBy = filterBy.toLocaleLowerCase();
+      // return this.products;
+      return this.products.filter((product: IProduct)=>product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1)
+    }
+
+
 
 
 }

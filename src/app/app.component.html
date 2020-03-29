@@ -1,6 +1,10 @@
 <app-navbar></app-navbar>
 <main role="main" class="container">
   <h2>{{ title}}</h2>
+  <input type="text" class="form-control" style="width: 200px;" [(ngModel)]="listFilter">
+  <br>
+
+  <p>Filtered by : {{listFilter}} </p>
   <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -15,7 +19,7 @@
     </thead>
     <tbody>
 
-      <tr *ngFor="let product of products">
+      <tr *ngFor="let product of filteredProducts">
         <th scope="row">{{product.productId}}</th>
         <td>{{product.productName}}</td>
         <td>{{product.productCode}}</td>
