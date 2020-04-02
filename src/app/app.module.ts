@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { RouterModule  , Routes } from '@angular/router';
+
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +12,13 @@ import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { RegisterComponent } from './register/register.component';
 import { IndexComponent } from './index/index.component';
+import { ProductsComponent } from './products/products.component';
+
+const appRoutes: Routes = [
+  {path:'sign-in' , component : LoginComponent},
+  {path:'sign-up' , component : RegisterComponent},
+  {path:'',component: IndexComponent , pathMatch: 'full'}
+]
 
 @NgModule({
   declarations: [
@@ -18,15 +27,17 @@ import { IndexComponent } from './index/index.component';
     LoginComponent,
     FooterComponent,
     RegisterComponent,
-    IndexComponent
+    IndexComponent,
+    ProductsComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     AppRoutingModule,
     FormsModule
 
   ],
   providers: [],
-  bootstrap: [IndexComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
